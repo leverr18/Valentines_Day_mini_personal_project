@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Valentine 💖</title>
+    <style>
+        body {
+            background-color: #ffccdd;
+            text-align: center;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ff4d6d;
+            text-shadow: 2px 2px 5px #ff99aa;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 2px 2px 5px #ff99aa; }
+            to { text-shadow: 4px 4px 10px #ff66b2; }
+        }
+
+        img {
+            width: 300px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .yes {
+            background-color: #ff4d6d;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .yes:hover {
+            background-color: #ff1e4d;
+        }
+
+        .no {
+            background-color: #cccccc;
+            color: black;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+    <script>
+        function moveButton() {
+            let button = document.getElementById("noButton");
+            let maxX = window.innerWidth - 150; // Keep it inside the screen width
+            let maxY = window.innerHeight - 100; // Keep it inside the screen height
+            
+            let x = Math.random() * maxX;
+            let y = Math.random() * maxY;
+
+            button.style.position = "absolute";
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+
+        function showLove() {
+            document.getElementById("content").innerHTML = `
+                <h1>I love you pookie ^_^ 💕</h1>
+                <img src="https://e1.pxfuel.com/desktop-wallpaper/690/37/desktop-wallpaper-happy-valentine-s-day-%E2%99%A5-sanrio-valentines.jpg" alt="Valentine's Image" />
+            `;
+        }
+    </script>
+</head>
+<body>
+    <div id="content">
+        <h1>Will you be my Valentine? 🥰</h1>
+        <div class="buttons">
+            <button class="yes" onclick="showLove()">Yes 💖</button>
+            <button class="no" id="noButton" onmouseover="moveButton()">No 😭</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
